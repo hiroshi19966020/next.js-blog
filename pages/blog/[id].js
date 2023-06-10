@@ -1,3 +1,5 @@
+import styles from "@/styles/Home.module.css";
+import post from "@/styles/post.module.css";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { client } from "@/libs/client";
@@ -28,15 +30,19 @@ export default function BlogId({ blog }) {
     <>
       <Header></Header>
       <main>
-        <h1>{blog.title}</h1>
-        <ul>
-          <li>{new Date(blog.createdAt).toLocaleDateString("ja-JP")}</li>
-          <li>{blog.tags.name}</li>
-        </ul>
-        <div>
-          <img src={blog.photo.url} alt={blog.photo.alt} />
+        <div className={`${post.container} ${post.article}`}>
+          <h1 className={post.title_item}>{blog.title}</h1>
+          <ul>
+            <li className={post.date}>
+              {new Date(blog.createdAt).toLocaleDateString("ja-JP")}
+            </li>
+            <li className={post.tags}>{blog.tags.name}</li>
+          </ul>
+          <div>
+            <img src={blog.photo.url} alt={blog.photo.alt} />
+          </div>
+          <div dangerouslySetInnerHTML={{ __html: `${blog.body}` }}></div>
         </div>
-        <div dangerouslySetInnerHTML={{ __html: `${blog.body}` }}></div>
       </main>
       <Footer></Footer>
     </>

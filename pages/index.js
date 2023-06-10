@@ -18,22 +18,26 @@ export default function Home({ blog }) {
   return (
     <>
       <Header></Header>
-      {blog.map((blog) => (
-        <div key={blog.id}>
-          <div>
-            <div>
-              <img src={blog.photo.url} alt={blog.photo.alt} />
+      <div className={`${styles.container} ${styles.article}`}>
+        <div className={styles.wrapper}>
+          {blog.map((blog) => (
+            <div key={blog.id} className={styles.article_item}>
+              <div className={styles.thubnail}>
+                <img src={blog.photo.url} alt={blog.photo.alt} />
+              </div>
+              <div className={styles.__inner}>
+                <div className={styles.day}>
+                  <p>{new Date(blog.createdAt).toLocaleDateString("ja-JP")}</p>
+                </div>
+                <div className={styles.tags}>{blog.tags.name}</div>
+                <h3 className={styles.title}>
+                  <Link href={`blog/${blog.id}`}>{blog.title}</Link>
+                </h3>
+              </div>
             </div>
-            <div>
-              <p>{new Date(blog.createdAt).toLocaleDateString("ja-JP")}</p>
-            </div>
-            <div>{blog.tags.name}</div>
-            <h1>
-              <Link href={`blog/${blog.id}`}>{blog.title}</Link>
-            </h1>
-          </div>
+          ))}
         </div>
-      ))}
+      </div>
       <Footer></Footer>
     </>
   );
