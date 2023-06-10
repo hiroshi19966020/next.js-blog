@@ -1,3 +1,5 @@
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 import { client } from "@/libs/client";
 
 export const getStaticProps = async (context) => {
@@ -23,16 +25,20 @@ export const getStaticPaths = async () => {
 
 export default function BlogId({ blog }) {
   return (
-    <main>
-      <h1>{blog.title}</h1>
-      <ul>
-        <li>{new Date(blog.createdAt).toLocaleDateString("ja-JP")}</li>
-        <li>{blog.tags.name}</li>
-      </ul>
-      <div>
-        <img src={blog.photo.url} alt={blog.photo.alt} />
-      </div>
-      <div dangerouslySetInnerHTML={{ __html: `${blog.body}` }}></div>
-    </main>
+    <>
+      <Header></Header>
+      <main>
+        <h1>{blog.title}</h1>
+        <ul>
+          <li>{new Date(blog.createdAt).toLocaleDateString("ja-JP")}</li>
+          <li>{blog.tags.name}</li>
+        </ul>
+        <div>
+          <img src={blog.photo.url} alt={blog.photo.alt} />
+        </div>
+        <div dangerouslySetInnerHTML={{ __html: `${blog.body}` }}></div>
+      </main>
+      <Footer></Footer>
+    </>
   );
 }

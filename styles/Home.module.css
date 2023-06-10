@@ -1,0 +1,52 @@
+.header {
+  background: #29313d;
+}
+.header a {
+  color: #fff;
+}
+.header h1 {
+  font-size: 25px;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.gnav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px 84px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.gnav ul {
+  display: flex;
+}
+.gnav ul li {
+  padding: 0 20px;
+}
+
+.logo {
+  font-weight: bold;
+}
+
+/*------------- footer ------------*/
+.footer {
+  background: #29313d;
+  padding: 30px 0px 20px 0px;
+}
+.footer ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer ul li {
+  margin: 0px 15px;
+}
+.footer ul li img {
+  width: 28px;
+  height: auto;
+}
+.footer .copyright {
+  text-align: center;
+  color: #fff;
+  margin-top: 30px;
+}/*# sourceMappingURL=Home.module.css.map */

@@ -1,6 +1,8 @@
 import styles from "@/styles/Home.module.css";
 import { client } from "@/libs/client";
 import Link from "next/link";
+import { Header } from "@/components/Header.js";
+import { Footer } from "@/components/Footer.js";
 
 export const getStaticProps = async () => {
   const data = await client.get({ endpoint: "blog" });
@@ -15,6 +17,7 @@ export const getStaticProps = async () => {
 export default function Home({ blog }) {
   return (
     <>
+      <Header></Header>
       {blog.map((blog) => (
         <div key={blog.id}>
           <div>
@@ -31,6 +34,7 @@ export default function Home({ blog }) {
           </div>
         </div>
       ))}
+      <Footer></Footer>
     </>
   );
 }
