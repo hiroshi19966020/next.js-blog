@@ -19,11 +19,34 @@
   }
   h2 {
     padding: 0px 0px 5px;
-    margin-bottom: 25px;
+    margin: 25px 0px;
     font-size: 1.5rem;
     font-weight: bold;
     color: #384359;
     border-bottom: 1px solid #384359;
+  }
+  p {
+    margin-bottom: 15px;
+    line-height: 1.5;
+  }
+  ol {
+    li {
+      position: relative;
+      margin-bottom: 15px;
+      color: #404040;
+      font-weight: bold;
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        left: -20px;
+        top: 0px;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: #c3a9a9;
+      }
+    }
   }
   ul {
     margin-top: 10px;
@@ -35,10 +58,13 @@
       margin-right: 15px;
     }
     .tags {
+      text-align: center;
+      width: 70px;
+      margin: 10px 0px;
       border: 1px solid #299dcc;
       color: #384359;
       border-radius: 15px;
-      padding: 0px 6px;
+      padding: 2px 6px;
     }
   }
 }
