@@ -26,6 +26,7 @@ export const getStaticProps = async () => {
     endpoint: "blog",
     queries: { filters: `tags[contains]content_id` },
   });
+
   // カテゴリーコンテンツの取得
   const tagsData = await client.get({ endpoint: "tags" });
 

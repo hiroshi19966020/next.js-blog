@@ -3,6 +3,7 @@ import post from "@/styles/post.module.css";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { client } from "@/libs/client";
+import { Tag } from "@/components/Tag";
 
 export const getStaticProps = async (context) => {
   const id = context.params.id;

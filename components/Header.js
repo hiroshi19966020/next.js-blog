@@ -13,7 +13,7 @@ export function Header() {
             <Link href="">ABOUT</Link>
           </li>
           <li>
-            <Link href="">TAGS</Link>
+            <Link href="/tags">TAGS</Link>
           </li>
         </ul>
       </div>
